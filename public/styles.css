@@ -5,9 +5,10 @@ body {
 textarea {
   font-family: monospace;
   position: absolute;
-  width: 90%;
-  top: 60px;
+  width: 5%;
+  top: 40px;
   bottom: 10px;
   left: 10px;
+  height:5% !important;
   right: 10px;
 }
