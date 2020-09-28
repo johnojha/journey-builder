@@ -10,6 +10,58 @@
 
   <script src="postmonger.js"></script>
   <script src="activity.js"></script>
+  
+  
+   <script>
+    var obj = {
+  "name": "",
+  "id": null,
+  "key": "REST-1",
+  "arguments": {
+    "execute": {
+      "inArguments": [
+        
+        { "Message": "Journey Builder SMS Testing.Please Ignore"},
+	{"Phone" : "{{Contact.Attribute.SMSFinal.phone}}" },
+	{"Name" : "{{Contact.Attribute.SMSFinal.name}}" }
+	
+        
+      ],
+      "url": "https://pikachu-sms-twilio.herokuapp.com/sendMessage",
+ 	"verb":"Post",
+	"format":"json"
+    }
+  },
+  "configurationArguments": {
+    "applicationExtensionKey": "5e2b0e2b-136a-4f23-86e2-0fb773176e69",
+    "publish": {
+      "url": "https://pikachu-sms-twilio.herokuapp.com/sendMessage"
+    }
+  },
+  "metaData": {
+    "icon": "https://sfmc-test123.herokuapp.com/icon.png",
+    "category": "message",
+    "iconSmall": null,
+    "original_icon": "icon.png",
+    "isConfigured": true
+  },
+  "editable": true,
+  "outcomes": [
+    {
+      "next": "WAITBYDURATION-1"
+    }
+  ],
+  "errors": []
+};
+
+
+var myJSON = JSON.stringify(obj);
+document.getElementById("configuration").innerHTML = myJSON;
+    
+  </script>
+  
+
+
 
 </body>
 </html>
